@@ -18,7 +18,8 @@ class PasswordInput extends React.Component {
             <PasswordField />
           </div>
           <div class="col-mid-4"
-            <StrengthMetric />
+            <StrengthMetric principles={goodPasswordPrinciples}
+                            password={password} />
           </div>
         </div>
       </div>
