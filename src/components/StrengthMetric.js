@@ -17,11 +17,22 @@ class StrengthMetric extends React.Component {
     return (obeyedCount / principlesCount ) * 100.0;
   }
 
+  progressColor(){
+    let percentage = this.obeyedPercentage();
+
+    return classNames({
+      danger: ( percetage < 33.4 ),
+      success: ( percentage >= 66.7 ),
+      warning: ( percentage >= 33.4 && percentage < 66.7 )
+    })
+  }
+
   render() {
     return (
       <Panel>
-      <ProgressBar now={this.obeyedPercentage()}/>
-      <h5>A good password should: </h5>
+      <ProgressBar now={this.obeyedPercentage()}
+                    bsStyle={this.progressColor()}/>
+      <h5>Signs of a strong password: </h5>
       <PrinciplesList {...this.props} />
       </Panel>
     )
