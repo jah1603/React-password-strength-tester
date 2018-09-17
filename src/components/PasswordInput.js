@@ -16,13 +16,15 @@ class PasswordInput extends React.Component {
   render () {
 
     let { goodPasswordPrinciples } = this.props;
+    let { password } = this.state;
 
     return (
       <div class="container">
         <div class="row"
           <div class="col-md-8"
             <PasswordField password={password}
-                          onPasswordChange={this.changePassword}/>
+                          onPasswordChange={this.changePassword}
+                          principles={goodPasswordPrinciples}/>
           </div>
           <div class="col-mid-4"
             <StrengthMetric principles={goodPasswordPrinciples}
