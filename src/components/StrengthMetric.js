@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Panel } from 'react-bootstrap';
+import { Panel, ProgressBar } from 'react-bootstrap';
 import classNames from 'classnames';
 
 class StrengthMetric extends React.Component {
@@ -15,5 +15,15 @@ class StrengthMetric extends React.Component {
     let principlesCount = principles.length;
 
     return (obeyedCount / principlesCount ) * 100.0;
+  }
+
+  render() {
+    return (
+      <Panel>
+      <ProgressBar now={this.obeyedPercentage()}/>
+      <h5>A good password should: </h5>
+      <PrinciplesList {...this.props} />
+      </Panel>
+    )
   }
 }
