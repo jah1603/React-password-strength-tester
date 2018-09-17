@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Panel } from 'react-bootstrap';
-import 
+import classNames from 'classnames';
 
 class StrengthMetric extends React.Component {
 
@@ -8,6 +8,17 @@ class StrengthMetric extends React.Component {
     let { password } = this.props;
 
     return principle.predicate(password);
+  }
+
+  principleClass(principle){
+    let obeyed = this.principleObeyed(principle);
+
+    return classNames({
+
+      ['text-success': obeyed],
+      ['text-danger': !obeyed]
+
+    })
   }
 
   render() {
