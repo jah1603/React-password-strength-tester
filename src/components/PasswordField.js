@@ -33,7 +33,7 @@ class PasswordField extends React.Component {
     let percentage = this.obeyedPercentage();
 
     return classNames({
-      danger: ( percetage < 33.4 ),
+      error: ( percentage < 33.4 ),
       success: ( percentage >= 66.7 ),
       warning: ( percentage >= 33.4 && percentage < 66.7 )
     })
@@ -44,6 +44,7 @@ class PasswordField extends React.Component {
       <Input type='password'
       label='Password'
       value={password}
+      bsStyle={this.progressColor()}
       onChange={this.handlePasswordChange}
       hasFeedback
     )

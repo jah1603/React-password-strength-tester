@@ -21,7 +21,7 @@ class StrengthMetric extends React.Component {
     let percentage = this.obeyedPercentage();
 
     return classNames({
-      danger: ( percetage < 33.4 ),
+      danger: ( percentage < 33.4 ),
       success: ( percentage >= 66.7 ),
       warning: ( percentage >= 33.4 && percentage < 66.7 )
     })

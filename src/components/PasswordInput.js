@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import StrengthMetric from './StrengthMetric';
+import PasswordField from './PasswordField';
 
 class PasswordInput extends React.Component {
 
