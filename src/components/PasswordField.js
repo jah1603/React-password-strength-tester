@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Input} from 'react-bootstrap';
+import {Form} from 'react-bootstrap';
 import classNames from 'classnames';
 
 
@@ -45,7 +45,7 @@ class PasswordField extends React.Component {
     let {password} = this.props;
 
     return (
-      <Input type='password'
+      <Form type='password'
       label='Password'
       value={password}
       bsStyle={this.progressColor()}

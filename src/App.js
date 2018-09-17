@@ -8,15 +8,15 @@ const DIGIT_REGEX = new RegExp('/[0-9]/');
 PasswordInput.defaultProps = {
 goodPasswordPrinciples: [
 {
-label: "6+ characters",
+label: "contains 6 or more characters",
 predicate: password => password.length >= 6
 },
 {
-label: "with at least one digit",
+label: "contains at least one digit",
 predicate: password => password.match(DIGIT_REGEX) !== null
 },
 {
-label: "with at least one special character",
+label: "contains at least one special character",
 predicate: password => password.match(SPECIAL_CHARS_REGEX) !== null
 }
 ]
