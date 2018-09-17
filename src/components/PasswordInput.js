@@ -22,13 +22,13 @@ class PasswordInput extends React.Component {
 
     return (
       <div class="container">
-        <div class="row"
-          <div class="col-md-8"
+        <div class="row">
+          <div class="col-md-8">
             <PasswordField password={password}
                           onPasswordChange={this.changePassword}
                           principles={goodPasswordPrinciples}/>
           </div>
-          <div class="col-mid-4"
+          <div class="col-mid-4">
             <StrengthMetric principles={goodPasswordPrinciples}
                             password={password} />
           </div>
@@ -37,3 +37,5 @@ class PasswordInput extends React.Component {
     )
   }
 }
+
+export default PasswordInput;

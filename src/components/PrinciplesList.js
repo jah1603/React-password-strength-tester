@@ -15,8 +15,8 @@ class PrinciplesList extends React.Component {
 
     return classNames({
 
-      ['text-success': obeyed],
-      ['text-danger': !obeyed]
+      ['text-success']: obeyed,
+      ['text-danger']: !obeyed
 
     })
   }
@@ -40,3 +40,5 @@ class PrinciplesList extends React.Component {
   }
 
 }
+
+export default PrinciplesList;

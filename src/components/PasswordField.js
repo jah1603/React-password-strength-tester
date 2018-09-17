@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Input} from 'react-bootstrap';
+import classNames from 'classnames';
 
 
 class PasswordField extends React.Component {
@@ -11,7 +12,7 @@ class PasswordField extends React.Component {
 
   handlePasswordChange(evt){
 
-    let { onPasswordChange = this.props }
+    let { onPasswordChange } = this.props;
     onPasswordChange(evt.target.value);
 
   }
@@ -21,7 +22,7 @@ class PasswordField extends React.Component {
 
     let obeyedCount = principles.map( p => p.predicate(password))
                                 .reduce((count, obeyed) =>
-                                  count + (satisfied ? 1 : 0),
+                                  count + (obeyed ? 1 : 0),
                                 0 );
 
     let principlesCount = principles.length;
@@ -40,13 +41,18 @@ class PasswordField extends React.Component {
   }
 
   render() {
+
+    let {password} = this.props;
+
     return (
       <Input type='password'
       label='Password'
       value={password}
       bsStyle={this.progressColor()}
       onChange={this.handlePasswordChange}
-      hasFeedback
+      hasFeedback />
     )
   }
 }
+
+export default PasswordField;

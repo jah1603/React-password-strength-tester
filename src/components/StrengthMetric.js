@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Panel, ProgressBar } from 'react-bootstrap';
 import classNames from 'classnames';
+import PrinciplesList from './PrinciplesList';
 
 class StrengthMetric extends React.Component {
 
@@ -9,7 +10,7 @@ class StrengthMetric extends React.Component {
 
     let obeyedCount = principles.map( p => p.predicate(password))
                                 .reduce((count, obeyed) =>
-                                  count + (satisfied ? 1 : 0),
+                                  count + (obeyed ? 1 : 0),
                                 0 );
 
     let principlesCount = principles.length;
@@ -38,3 +39,5 @@ class StrengthMetric extends React.Component {
     )
   }
 }
+
+export default StrengthMetric;
