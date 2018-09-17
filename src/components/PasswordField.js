@@ -10,13 +10,18 @@ class PasswordField extends React.Component {
   }
 
   handlePasswordChange(evt){
-    
+
+    let { onPasswordChange = this.props }
+    onPasswordChange(evt.target.value);
+
   }
 
   render() {
     return (
       <Input type='password'
       label='Password'
+      value={password}
+      onChange={this.handlePasswordChange}
       hasFeedback
     )
   }
